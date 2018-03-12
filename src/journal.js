@@ -10,41 +10,24 @@ export function wordCounter(body) {
 };
 
 export function consonantCounter(body) {
-  var charsArray = [];
   var tempArray = [];
   var resultArray = [];
-  var vowelsArray = ["a", "e", "i", "o", "u", "y"];
-  var specialsArray = [" ", "?", ",", ".", "!", "-"];
-  charsArray = body.split("");
-  console.log(charsArray);
-  for (var i = 0; i < vowelsArray.length; i++) {
-    for (var j = 0; j < charsArray.length; j++) {
-      if (charsArray[j] != vowelsArray[i]) {
-        tempArray.push(charsArray[j]);
-      }
-    }
-  }
-  for (var k = 0; k < specialsArray.length; k++) {
-    for (var l = 0; l < tempArray.length; l++) {
-      if (tempArray[l] != specialsArray[k]) {
-        resultArray.push(tempArray[l]);
-      }
+  var regexp = /[bcdfghjklmnpqrstvwxz]|[\!\@\#\$\%\^\&\*\)\(\+\=\_\-]\s/gi;
+  var tempArray = body.match(regexp);
+  for (var i = 0; i < tempArray.length; i++)
+  {
+    if(tempArray[i] != ".")
+    {
+      resultArray.push(tempArray[i]);
     }
   }
   return resultArray.length;
 };
 
 export function vowelCounter(body) {
-  var charsArray = [];
+  var resultVowels = [];
   var resultArray = [];
-  var vowelsArray = ["a", "e", "i", "o", "u", "y"];
-  charsArray = body.split(" ");
-  for (var i = 0; i < vowelsArray.length; i++) {
-    for (var j = 0; j < charsArray.length; j++) {
-      if (charsArray[j] == vowelsArray[i]) {
-        resultArray.push(charsArray[j]);
-      }
-    }
-  }
-  return resultArray.length;
+  var re = /[aeiou]/gi;
+  var resultVowels = body.match(re)
+  return resultVowels.length;
 };
