@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <title>Journal</title>
+  </head>
+  <body>
+    <form id="journal-form">
+      <label for="entry-title">Enter an entry title:</label>
+      <input id="entry-title" type="text">
+      <br>
+      <label for="entry-body">Enter an entry body:</label>
+      <input id="entry-body" type="text">
+      <button type="submit">Submit</button>
+    </form>
+    <p>Entry Title: </p><p id="entry-title"></p>
+    <ul>
+      <li id="blurb"></li>
+      <li>Number of words:<p id="word-count"></p></li>
+      <li>Number of consonants:<p id="consonant-count"></p></li>
+      <li>Number of vowels:<p id="vowel-count"></p></li>
+    </ul>
+  </body>
+</html>
