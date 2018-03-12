@@ -1,4 +1,4 @@
-import { wordCounter, vowelCounter, consonantCounter } from './journal';
+import { wordCounter, vowelCounter, consonantCounter, getTeaser } from './journal';
 
 $(document).ready(function() {
   $('#journal-form').submit(function(event) {
@@ -9,8 +9,10 @@ $(document).ready(function() {
     var wordNum = wordCounter(body);
     var vowelNum = vowelCounter(body);
     var consonantNum = consonantCounter(body);
+    var blurb = getTeaser(body);
 
     $("#title").text(title);
+    $("#blurb").text(blurb + "...");
     $("#word-count").text(wordNum);
     $("#consonant-count").text(consonantNum);
     $("#vowel-count").text(vowelNum);

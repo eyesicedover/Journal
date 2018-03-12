@@ -31,3 +31,10 @@ export function vowelCounter(body) {
   var resultVowels = body.match(re)
   return resultVowels.length;
 };
+
+export function getTeaser(body) {
+  var wordsArray = [];
+  wordsArray = body.split(" ");
+  var shortBlurb = wordsArray.slice(0, 8);
+  return shortBlurb.join(" ");
+};
